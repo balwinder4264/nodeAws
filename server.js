@@ -53,7 +53,9 @@ app.use('/auth', authRoutes);
 app.get('/test', () => {
     return "heloo";
 })
-
+app.get('/', () => {
+    return "balwinder testing";
+})
 app.use((error, req, res, next) => {
     console.log(error);
     const status = error.statusCode || 500;
@@ -68,6 +70,7 @@ mongoose
         process.env.DB_REMOTE
     )
     .then(result => {
+        console.log("port=>", port)
         app.listen(port);
     })
     .catch(err => console.log(err));
