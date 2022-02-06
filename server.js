@@ -51,10 +51,10 @@ app.use((req, res, next) => {
 app.use('/feed', feedRoutes);
 app.use('/auth', authRoutes);
 app.get('/test', () => {
-    return "heloo";
+    res.send("heloo");
 })
 app.get('/', () => {
-    return "balwinder testing";
+    res.send("heloo balwinder");
 })
 app.use((error, req, res, next) => {
     console.log(error);
